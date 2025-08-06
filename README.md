@@ -42,5 +42,3 @@
 
    ```bash
    sudo docker volume rm "$DOCKER_NOOP_VOLUME" > /dev/null
-
-
