@@ -20,16 +20,11 @@
    ```bash
    input_dir=".../input_data"
    output_dir=".../output_data"
-   
    mkdir -p $output_dir
-
-
 2. **创建临时卷**
    ```bash
    DOCKER_NOOP_VOLUME="beyondfa_baseline-volume"
    sudo docker volume create "$DOCKER_NOOP_VOLUME" > /dev/null
-
-
 3. **运行容器**
    ```bash
    sudo docker run \
@@ -42,7 +37,6 @@
        --volume $output_dir:/output \
        --volume "$DOCKER_NOOP_VOLUME":/tmp \
        nimg:v0.8.6
-
 
 4. **删除临时卷**
 
