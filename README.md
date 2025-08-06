@@ -10,3 +10,6 @@
    ```bash
    git clone https://github.com/WanZhonghua/BFAChallenge.git
    cd BFAChallenge
+2. **构建 Docker 镜像**
+   ```bash
+   DOCKER_BUILDKIT=1 sudo docker build -t nimg:v0.8.6 .
