@@ -39,6 +39,5 @@
        nimg:v0.8.6
 
 4. **删除临时卷**
-
    ```bash
    sudo docker volume rm "$DOCKER_NOOP_VOLUME" > /dev/null
