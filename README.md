@@ -17,36 +17,36 @@
 ## ▶️ 运行容器
 
 1. **设置输入/输出目录**
-```bash
-input_dir=".../input_data"
-output_dir=".../output_data"
-
-mkdir -p $output_dir
+   ```bash
+   input_dir=".../input_data"
+   output_dir=".../output_data"
+   
+   mkdir -p $output_dir
 
 
 2. **创建临时卷**
-```bash
-DOCKER_NOOP_VOLUME="beyondfa_baseline-volume"
-sudo docker volume create "$DOCKER_NOOP_VOLUME" > /dev/null
+   ```bash
+   DOCKER_NOOP_VOLUME="beyondfa_baseline-volume"
+   sudo docker volume create "$DOCKER_NOOP_VOLUME" > /dev/null
 
 
 3. **运行容器**
-```bash
-sudo docker run \
-    -it \
-    --platform linux/amd64 \
-    --network none \
-    --gpus all \
-    --rm \
-    --volume $input_dir:/input:ro \
-    --volume $output_dir:/output \
-    --volume "$DOCKER_NOOP_VOLUME":/tmp \
-    nimg:v0.8.6
+   ```bash
+   sudo docker run \
+       -it \
+       --platform linux/amd64 \
+       --network none \
+       --gpus all \
+       --rm \
+       --volume $input_dir:/input:ro \
+       --volume $output_dir:/output \
+       --volume "$DOCKER_NOOP_VOLUME":/tmp \
+       nimg:v0.8.6
 
 
 4. **删除临时卷**
 
-```bash
-sudo docker volume rm "$DOCKER_NOOP_VOLUME" > /dev/null
+   ```bash
+   sudo docker volume rm "$DOCKER_NOOP_VOLUME" > /dev/null
 
 
